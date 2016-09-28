@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html; 
+charset=utf-8" />
+    <title>Login & Sign Up page</title>
+	
+	<script src="SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationConfirm.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationConfirm.css" rel="stylesheet" type="text/css" />
+	
+	<script>
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+</script>
+	
+	  <meta charset="utf-8">
+  
+    <style type="text/css">
+<!--
+.style1 {color: #3333FF}
+-->
+<!--
+.style1 {
+	font-size: 36px;
+	font-weight: bold;
+}
+body,td,th {
+	font-family: Times New Roman, Times, serif;
+}
+-->
+</style>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+    <link href="../../../Documents/Unnamed Site 2/style/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body onload="form0.reset();form1.reset();">
+  <div class="container"></div>
+  <div class="container">
+    <div class="container">
+	
+      <form id="form0" class="form-signin" onsubmit="return validateForm()" method='post' action="checklogin.php">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="form-signin-heading">Please sign in</h2>
+          </div>
+          <div class="panel-body">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input name="eemail" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input name="district_pass" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me">
+                Remember me </label>
+            </div>
+			<a href="Forgot_password.html">
+            <div class="btn-link" align="right";>Forget Password? </div>
+			</a>
+            <button name="signin" class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+            <!-- Trigger the modal with a button -->
+            <div type="submit"class="btn btn-link" data-toggle="modal" data-target="#myModal" >Sign Up</div>
+          </div>
+        </div>
+      </form>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title" align="center" style="color: #06F">New Here? Please sign up</h2>
+            </div>
+            <div class="modal-body">
+            <form id="form1" class="form-signin"  onsubmit="return validateForm()" method='post' action="http://localhost/c2/confirm_validation.php">
+              <div class="form-group">
+                <label for="inputFirstName" class="sr-only">First Name</label>
+                <input name="fname" type="name" id="inputEmail" class="form-control" placeholder="First Name" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="inputMiddleName" class="sr-only">Middle Name</label>
+                <input name="mname" type="name" id="inputEmail" class="form-control" placeholder="Middle Name">
+              </div>
+              <div class="form-group">
+                <label for="inputLastName" class="sr-only">Last Name</label>
+                <input name="lname" type="name" id="inputname" class="form-control" placeholder="Last Name" required>
+              </div>
+              <div class="form-group">
+                <label for="inputDistrict" class="sr-only">District</label>
+                <input name="district_name" type="name" id="inputPassword" class="form-control" placeholder="District" required>
+              </div>
+              <div class="form-group">
+                <label for="inputSSN" class="sr-only">Social Security Number</label>
+                <input name="ssn" type="name" id="inputPassword" class="form-control" placeholder="Social Security Number" required>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="sr-only">Email</label>
+                <input name="eemail" type="email" id="inputPassword" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="form-group" >
+                <label for="inputTelephone" class="sr-only">Telephone</label>
+                <input name="telephone_number" type="number" id="inputNum" class="form-control" size="10" onkeypress="return isNumberKey(event)" placeholder="Telephone">
+			  </div>
+              <div class="form-group">
+                <label for="inputMobilePhone" class="sr-only">Mobile Phone</label>
+                <input name="mobile_number" type="number" id="inputPassword" class="form-control" onkeypress="return isNumberKey(event)" maxlength="10" placeholder="Mobile Phone" required>
+              </div>
+			   <div class="form-group">
+			   <select name="region_name"  class="form-control" placeholder="Region"  id="region" required>
+    <option>Please Select your Region</option>
+    <option>Greater Accra Region</option>
+    <option>Eastern Region</option>
+	<option>Western Region</option>
+	<option>Central Region</option>
+	<option>Ashanti Region</option>
+	<option>Volta Region</option>
+	<option>Brong Ahafo Region</option>
+	<option>Northern Region</option>
+	<option>Upper West Region</option>
+	<option>Upper East Region</option>
+  </select>
+</div>
+	 
+              <div class="form-group">
+			  <span id="sprypassword1">
+                <label for="pwd" class="sr-only">Password</label>
+                <input name="district_pass" type="password" id="pwd" class="form-control" placeholder="Password" >
+				<p><strong>Note:</strong> Your Password should be within 8-18 characters with atleast a letter and a number.</p>
+				 <span class="passwordRequiredMsg">A value is required.</span>
+  <span class="passwordMinCharsMsg">Minimum number of characters not met.</span>
+  <span class="passwordMaxCharsMsg">Exceeded maximum number of characters.</span>
+  <span class="passwordInvalidStrengthMsg">The password doesn't meet the specified strength.</span></span>
+				
+              </div>
+              <div class="form-group">
+			   <span id="spryconfirm1">
+                <label for="pwd2" class="sr-only">ComfirmPassword</label>
+                <input name="pass_con" type="password" id="pwd2" class="form-control" placeholder="Retype Your Password">
+				
+				  <span class="confirmRequiredMsg">A value is required.</span>
+  <span class="confirmInvalidMsg">Your passwords don't match. Please retype your password to confirm it.</span></span>
+              </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button  class="btn btn-primary btn-lg" type="submit" >Submit</button>
+              </div>
+			                                       
+  
+
+			 
+<script type="text/javascript">
+var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minChars:8, maxChars:18, minAlphaChars:1, minNumbers:1});
+var spryconfirm1 = new Spry.Widget.ValidationConfirm("spryconfirm1", "pwd");
+</script>
+			  
+            </form>
+          </div>
+        </div>
+      </div>
+    <span class="fade"></span></div>
+  </div>
+  <!-- /container -->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <div id="page-prefooter"></div><div id="page-full-footer"><div id="footer-top-margin"></div><div id="footer-border"></div>
+	<div class="footer-col"><ul>
+	<li class="header">&copy; Intellect Group Limited. 2015</li>
+	</ul></div>
+  </body>
+</html>
